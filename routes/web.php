@@ -11,6 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use \App\Http\Controllers\PageController;
+
+Route::get('/', 'TripController@index');
+Route::get('/about', 'PageController@about');
+Route::get('/trips/{tripId?}', 'TripController@show');
+
+Route::group(['prefix'=>'admin'], function(){
+    Route::get('/', 'AdminController@read');
+    Route::get('create', 'AdminController@create');
+    Route::get('update/{tripId?}', 'AdminController@update');
+
+    Route::post('create', 'TripController@create');
+    Route::put('update/{tripId?}', 'TripController@update');
+    Route::delete('delete/{tripdId?}', 'TripController@delete');
 });
+
+Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');

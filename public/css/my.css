@@ -1,0 +1,71 @@
+.custom-navbar{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100vw;
+    -moz-box-shadow: 0px 4px 30px 0px #656565;
+    -webkit-box-shadow: 0px 4px 30px 0px #656565;
+    -o-box-shadow: 0px 4px 30px 0px #656565;
+    box-shadow: 0px 4px 30px 0px #656565;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=180, Strength=30);
+}
+
+.home{
+    z-index: 0;
+    padding-top:80px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    /* margin-left:20px;
+    margin-right: 20px; */
+}
+
+.home > .custom-card{
+    width: 18rem;
+    margin: calc(1%);
+}
+
+.detail{
+    padding-top:80px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: column;
+    justify-content: center;
+}
+
+.detail-item > div > p{
+    text-align: center;
+}
+
+.detail-item > div > img {
+    width: 20vw;
+}
+
+.admin-create{
+    width: 100%;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.admin-create > form{
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-home{
+    width: 100%;
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.img-list-admin{
+    width: 100px;
+}
+
+.custom-duo-detail{
+    max-height: 400px;
+}
