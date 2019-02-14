@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TripsUsersTable extends Migration
+class CreateTripUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class TripsUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('trips_users', function (Blueprint $table) {
+        Schema::create('trip_user', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->foreign('trip_id')->reference('id')->on('trips');
             $table->integer('trip_id')->foreign('user_id')->reference('id')->on('users');
@@ -28,6 +28,6 @@ class TripsUsersTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('trip_user');
     }
 }

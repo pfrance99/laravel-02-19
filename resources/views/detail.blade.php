@@ -7,7 +7,7 @@
     <div class="detail container">
         @if(isset($trip))
           <div class="row col-md-8">
-              <div class="row col-md-12 custom-duo-detail">
+              <div class="row col-md-12 custo   m-duo-detail">
              <div class="col-md-6">
                 <img class="col-md-12" src="{{$trip->picture}}" alt="Description image">
              </div>
@@ -25,7 +25,9 @@
                 @endif
                 </div>
                 <p>{{$trip->description}}</p>
-                <form>
+                <form method="post" action="/booking/add">
+                    @csrf
+                    <input type="hidden" name="tripId" value="{{$trip->id}}">
                     <input type="submit" class="btn btn-sm btn-success" value="Book this trip">
                 </form>
             </div>

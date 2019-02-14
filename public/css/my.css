@@ -16,11 +16,25 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction:row;
-    /* margin-left:20px;
-    margin-right: 20px; */
 }
 
 .home > .custom-card{
+    width: 18rem;
+    margin: calc(1%);
+}
+
+.account{
+    z-index: 0;
+    padding-top:80px;
+}
+
+.card-container .col-md-12 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+}
+
+ .card-container > .custom-card{
     width: 18rem;
     margin: calc(1%);
 }

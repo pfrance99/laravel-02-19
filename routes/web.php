@@ -17,6 +17,14 @@ Route::get('/', 'TripController@index');
 Route::get('/about', 'PageController@about');
 Route::get('/trips/{tripId?}', 'TripController@show');
 
+//Routes protégées par le middleware auth
+Route::get('/account', 'UserController@index');
+Route::post('/booking/add', 'BookingController@create');
+Route::delete('/booking/delete/{tripId?}', 'BookingController@deleteOne');
+Route::delete('/booking/deleteAll', 'BookingController@deleteAll');
+
+
+//Route protégées par le middleware admin
 Route::group(['prefix'=>'admin'], function(){
     Route::get('/', 'AdminController@read');
     Route::get('create', 'AdminController@create');

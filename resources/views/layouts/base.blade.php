@@ -12,9 +12,9 @@
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-        <!-- Styles -->
         <link href="{{ asset('css/app.css')}}" rel="stylesheet">
         <link href="{{ asset('css/my.css') }}" rel="stylesheet">
+        <!-- Styles -->
 
     </head>
     <body>
@@ -34,8 +34,14 @@
               </li>
                 @auth
                         <li class="nav-item active">
-                          <a class="nav-link text-primary" href="/admin">Back office ({{Auth::user()->name}})<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/account">Account ({{Auth::user()->name}})<span class="sr-only">(current)</span></a>
                         </li>
+                        @if(Auth::user()->role)
+                            <li class="nav-item active">
+                              <a class="nav-link text-primary" href="/admin">Admin<span class="sr-only">(current)</span></a>
+                            </li>
+                        @endif
+
                         <li class="nav-item active">
                           <a class="nav-link text-danger" href="/logout">Logout<span class="sr-only">(current)</span></a>
                         </li>
@@ -57,6 +63,5 @@
 
         @yield('content')
 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
     </body>
 </html>

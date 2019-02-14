@@ -35,7 +35,7 @@ class TripController extends Controller
 
     public function create(Request $request)
     {
-        self::validateFields($request);
+        $this->validateFields($request);
 
         $trip = new Trip;
         $trip->label = $_POST['label'];
@@ -90,10 +90,5 @@ class TripController extends Controller
             'picture' => 'required|max:500',
             'description' => 'required'
         ])->validate();
-    }
-
-    public function users()
-    {
-        return $this->belongsToMany('App\User');
     }
 }
